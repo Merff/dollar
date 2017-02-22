@@ -5,19 +5,15 @@ feature 'admin page' do
 
   context 'user update force value and time' do
 
-    background do
-      Time.zone = 'Moscow'
-    end
-
     scenario 'set force time > current time' do
       date_time = DateTime.current + 1.hour
       visit '/admin'
       fill_in 'Force value', with: 20
-      select date_time.year, from: 'dollar[force_time(1i)]'
+      select date_time.year,           from: 'dollar[force_time(1i)]'
       select date_time.strftime("%B"), from: 'dollar[force_time(2i)]'
-      select date_time.day, from: 'dollar[force_time(3i)]'
-      select date_time.hour, from: 'dollar[force_time(4i)]'
-      select date_time.minute, from: 'dollar[force_time(5i)]'
+      select date_time.day,            from: 'dollar[force_time(3i)]'
+      select date_time.strftime("%H"), from: 'dollar[force_time(4i)]'
+      select date_time.strftime("%M"), from: 'dollar[force_time(5i)]'
       click_button 'Update Dollar'
       expect(page).to have_content '20.0 руб'
     end
@@ -26,11 +22,11 @@ feature 'admin page' do
       date_time = DateTime.current - 1.hour
       visit '/admin'
       fill_in 'Force value', with: 20
-      select date_time.year, from: 'dollar[force_time(1i)]'
+      select date_time.year,           from: 'dollar[force_time(1i)]'
       select date_time.strftime("%B"), from: 'dollar[force_time(2i)]'
-      select date_time.day, from: 'dollar[force_time(3i)]'
-      select date_time.hour, from: 'dollar[force_time(4i)]'
-      select date_time.minute, from: 'dollar[force_time(5i)]'
+      select date_time.day,            from: 'dollar[force_time(3i)]'
+      select date_time.strftime("%H"), from: 'dollar[force_time(4i)]'
+      select date_time.strftime("%M"), from: 'dollar[force_time(5i)]'
       click_button 'Update Dollar'
       expect(page).to have_content '60.0 руб'
     end
