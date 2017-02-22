@@ -3,7 +3,11 @@ require 'rails_helper'
 feature 'admin page' do
   given!(:dollar) { Dollar.create(real_value: 60.0, force_time: DateTime.current) }
 
-  context 'user update force data' do
+  context 'user update force value and time' do
+
+    background do
+      Time.zone = 'Moscow'
+    end
 
     scenario 'set force time > current time' do
       date_time = DateTime.current + 1.hour

@@ -4,7 +4,6 @@
       .col-md-2
         = f.input :force_value
       .col-md-10
-        = f.input :force_time 
+        = f.input :force_time
+        p * specified Moscow time
     = f.button :submit
-
-/as: :string, input_html: { value: f.object.force_time.localtime }
