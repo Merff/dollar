@@ -1,8 +1,15 @@
+## Dollar
 [![Build Status](https://travis-ci.org/Merff/dollar.svg?branch=master)](https://travis-ci.org/Merff/dollar)
 
-This test-task app.
+This app for test-task.
 
-```rake setup``` for fill db
+### Install
 
-can visit '/' and '/admin'
+```git clone``` ```bundle```
+
+```rake db:setup``` ```rake app:setup```
+
+```rails s```
+
+you can visit '/' and '/admin'
 
