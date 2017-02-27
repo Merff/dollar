@@ -7,14 +7,11 @@ This app for test-task.
 
 require Nokogiri for parse HTML
 
-```git clone```
+```git clone``` ```bundle```
 
-```bundle```
-
-```rake db:setup```
-
-```rake app:setup```
+```rake db:setup``` ```rake app:setup```
 
 ```rails s```
 
 you can visit '/' and '/admin'
+
