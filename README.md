@@ -5,11 +5,12 @@ This app for test-task.
 
 ### Install
 
-```git clone``` ```bundle```
+require Nokogiri for parse HTML
 
-```rake db:setup``` ```rake app:setup```
-
+```git clone```
+```bundle```
+```rake db:setup```
+```rake app:setup```
 ```rails s```
 
 you can visit '/' and '/admin'
-
