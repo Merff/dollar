@@ -1,3 +1,3 @@
 every :hour do
-  rake get_the_dollar
+  runner "GetDollarService.execute"
 end

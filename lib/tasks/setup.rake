@@ -1,8 +1,8 @@
 namespace :app do
 
-  desc 'create and fill Dollar'
+  desc 'create and fill in Dollar'
   task setup: :environment do
-    Rake::Task['get_the_dollar'].invoke
+    GetDollarService.execute
   end
 
 end
