@@ -17,8 +17,6 @@ class Dollar < ApplicationRecord
     end
   end
 
-  private
-
   def broadcast_to_currency_chanel
     ActionCable.server.broadcast 'root_page', { title: 'current_value', value: value }
   end
